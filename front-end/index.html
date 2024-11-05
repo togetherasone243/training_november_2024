@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/icons/font/bootstrap-icons.css">
+</head>
+<body>
+    <div class="main">
+        <div class="left" id="left">
+            <div class="logo">
+                <button type="`button" id="close"><i class="bi bi-x"></i></button>
+                <a href=""><span>E</span>volu<span>D</span>ata</a>
+            </div>
+            <ul>
+                <li>
+                    <a href=""><i class="bi bi-house"></i> Home</a>
+                </li>
+                <li>
+                    <a href=""><i class="bi bi-person-circle"></i> Users</a>
+                </li>
+                <li>
+                    <a href=""><i class="bi bi-person"></i> Profile</a>
+                </li>
+            </ul>
+        </div>
+        <div class="right" id="right">
+            <header>
+                <form action="">
+                    <button type="`button" id="open"><i class="bi bi-list"></i></button>
+                    <input type="text" placeholder="Recherche" id="">
+                </form>
+                <div class="profile">
+                    <img src="assets/img/img.jpg" alt="">
+                </div>
+            </header>
+
+            <div class="container">
+                <h1>Users</h1>
+                <div class="row">
+                    <button id="new-btn">New +</button>
+                </div>
+
+                <form class="form-data" id="form-data">
+                    <div class="input-container">
+                        <label for="">Nom</label>
+                        <input type="text" placeholder="Entrez le nom">
+                    </div>
+
+                    <div class="input-container">
+                        <label for="">Postnom</label>
+                        <input type="text" placeholder="Entrez le postnom">
+                    </div>
+
+                    <div class="input-container">
+                        <label for="">Prenom</label>
+                        <input type="text" placeholder="Entrez le prenom">
+                    </div>
+
+                    <div class="input-container">
+                        <label for="">Adresse</label>
+                        <textarea name="" id="" placeholder="Entrez votre adresse" rows="4"></textarea>
+                    </div>
+
+                    <div class="input-container">
+                        <button>Save</button>
+                    </div>
+
+                </form>
+
+                <!-- TABLE  -->
+
+              <div class="table-data">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nom</th>
+                            <th>postnom</th>
+                            <th>prenom</th>
+                            <th>adresse</th>
+                            <th>actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>1</th>
+                            <td>KAMBALE</td>
+                            <td>LWANZO</td>
+                            <td>Emery</td>
+                            <td>Kalamire</td>
+                            <td>
+                                <a href="" class="btn-edith">Edit</a>
+                                <a href="" class="btn-delete">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>2</th>
+                            <td>ENVI</td>
+                            <td>DANIEL</td>
+                            <td>Dieu-merci</td>
+                            <td>Kalimbute</td>
+                            <td>
+                                <a href="" class="btn-edith">Edit</a>
+                                <a href="" class="btn-delete">Delete</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+              </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
