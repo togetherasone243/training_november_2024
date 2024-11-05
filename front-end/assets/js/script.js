@@ -1,14 +1,11 @@
-// get elemets from html file
-
+// Get elements from HTML file
 const newBtn = document.getElementById('new-btn');
 const formData = document.getElementById('form-data');
-const openBtn = document.getElementById('open');
-const left = document.getElementById('left');
-const closeBtn = document.getElementById('close');
+const leftMenu = document.querySelector('.left');
 
-// Open form
-newBtn.addEventListener('click', ()=>{
-    if(formData.style.display == 'block') {
+// Open and close form
+newBtn.addEventListener('click', () => {
+    if (formData.style.display === 'block') {
         formData.style.display = 'none';
         newBtn.innerHTML = 'New +';
     } else {
@@ -17,15 +14,8 @@ newBtn.addEventListener('click', ()=>{
     }
 });
 
-// Open menus
+// Toggle menu
+function toggleDiv() {
+    leftMenu.style.display = leftMenu.style.display == 'none' ? 'block' : 'none';
+}
 
-openBtn.addEventListener('click', (e)=>{
-    e.preventDefault();
-    left.style.display = 'block';
-    left.style.position = 'absolute';
-});
-
-closeBtn.addEventListener('click', (e)=>{
-    e.preventDefault();
-    left.style.display = 'none';
-});
