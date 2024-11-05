@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/icons/font/bootstrap-icons.css">
+
+</head>
+<body>
+    <span id="new-btn"></span>
+    <span id="form-data"></span>
+    <div class="main">
+        <div class="left" >
+            <div class="logo">
+                <a href="" class="text-dark"><span>E</span>volu<span>D</span>ata</a>
+            </div>
+            <ul class="nav flex-column">
+                <li class="nav-item"> <a class="nav-link text-dark" href="./index.html"><i class="bi bi-house"></i> Home</a> </li>
+                <li class="nav-item"> <a class="nav-link text-dark" href="./index.html"><i class="bi bi-person-circle"></i> Users</a>
+                </li> <li class="nav-item"> <a class="nav-link text-dark" href="./profile.html"><i class="bi bi-person"></i> Profile</a>
+                </li>
+            </ul>
+        </div>
+        <div class="right" id="right">
+            <header>
+                <form action="">
+                    <button type="button" id="open" onclick="toggleDiv()"><i class="bi bi-list"></i></button>
+                    <input class="form-control" type="text" placeholder="Recherche" id="">
+                </form>
+                <div class="profile">
+                    <img src="https://i.pinimg.com/originals/52/fe/c5/52fec54732ea8fa383f614f447aec4ac.jpg" alt="">
+                </div>
+            </header>
+
+            <div class="container">
+                <h1 class="text-dark mb-4">Profile</h1>
+                <div class="col-12 shadow p-4">
+                    <div class="row">
+                        <img src="assets/img/forgot-password-office-dark.jpeg" class="img" height="100">
+                        <div class="col-xl-4 col-lg-4 col-md-6 ">
+                            <img src="https://i.pinimg.com/originals/52/fe/c5/52fec54732ea8fa383f614f447aec4ac.jpg" class="flaoting mx-5">
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 ">
+                            <b>Admin</b> <br>
+                            <span>admin@gmail.com</span> <br>
+                            <small>+243 000 000 000</small>
+                        </div>
+                        <div class="col-12 mt-4">
+                            <button class="btn btn-dark m-2">Edit profile</button>
+                            <button class="btn btn-outline-dark m-2">Edit password</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- card  -->
+                 <div class="row">
+                    <div class="col-12 py-3">
+                        <h1>Card</h1>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 p-3">
+                        <div class="card shadow">
+                            <h5 class="card-header">Title</h5>
+                            <div class="card-body">
+                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                            </div>
+                            <div class="card-footer text-center">
+                                <a href="#" class="btn btn-dark w-100">Show more...</a>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 p-3">
+                        <div class="card shadow">
+                            <h5 class="card-header">Title</h5>
+                            <div class="card-body">
+                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                            </div>
+                            <div class="card-footer text-center">
+                                <a href="#" class="btn btn-dark w-100">Show more...</a>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 p-3">
+                        <div class="card shadow">
+                            <h5 class="card-header">Title</h5>
+                            <div class="card-body">
+                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                            </div>
+                            <div class="card-footer text-center">
+                                <a href="#" class="btn btn-dark w-100">Show more...</a>
+                            </div>
+                          </div>
+                    </div>
+
+
+
+                 </div>
+
+                 <!-- Modals  -->
+
+                 <div class="row mt-3">
+                    <div class="col-12 py-3">
+                        <h1>Modal</h1>
+                    </div>
+                    <div class="col-12 p-3 shadow">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Modal 1
+                        </button>
+
+                        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modal2" data-bs-whatever="@mdo">Modal 2</button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal 1</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    I will not close if you click outside of me. Don't even try to press escape key.
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-dark">Confirm</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                  <form>
+                                    <div class="mb-3">
+                                      <label for="recipient-name" class="col-form-label">Recipient:</label>
+                                      <input type="text" class="form-control" id="recipient-name">
+                                    </div>
+                                    <div class="mb-3">
+                                      <label for="message-text" class="col-form-label">Message:</label>
+                                      <textarea class="form-control" id="message-text"></textarea>
+                                    </div>
+                                  </form>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                  <button type="button" class="btn btn-dark">Send message</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                 </div>
+                 <div class="row mt-3">
+                    <div class="col-12 py-3">
+                        <h1>Table</h1>
+                    </div>
+                    <div class="col-12 shadow p-3 mt-3">
+                        <div class="table-respossive">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Name</th>
+                                        <th>Addresse</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>1</th>
+                                        <td>Name 1</td>
+                                        <td>Addresse 1</td>
+                                        <td>
+                                            <a href="" class="text-danger"><i class="bi bi-trash"></i></a>
+                                            <a href="" class="text-dark"><i class="bi bi-pencil-square"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>2</th>
+                                        <td>Name 2</td>
+                                        <td>Addresse 2</td>
+                                        <td>
+                                            <a href="" class="text-danger"><i class="bi bi-trash"></i></a>
+                                            <a href="" class="text-dark"><i class="bi bi-pencil-square"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>3</th>
+                                        <td>Name 3</td>
+                                        <td>Addresse 3</td>
+                                        <td>
+                                            <a href="" class="text-danger"><i class="bi bi-trash"></i></a>
+                                            <a href="" class="text-dark"><i class="bi bi-pencil-square"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-12 shadow p-3 mt-3">
+                        <div class="table-respossive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Name</th>
+                                        <th>Addresse</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>1</th>
+                                        <td>Name 1</td>
+                                        <td>Addresse 1</td>
+                                        <td>
+                                            <a href="" class="text-danger"><i class="bi bi-trash"></i></a>
+                                            <a href="" class="text-dark"><i class="bi bi-pencil-square"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>2</th>
+                                        <td>Name 2</td>
+                                        <td>Addresse 2</td>
+                                        <td>
+                                            <a href="" class="text-danger"><i class="bi bi-trash"></i></a>
+                                            <a href="" class="text-dark"><i class="bi bi-pencil-square"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>3</th>
+                                        <td>Name 3</td>
+                                        <td>Addresse 3</td>
+                                        <td>
+                                            <a href="" class="text-danger"><i class="bi bi-trash"></i></a>
+                                            <a href="" class="text-dark"><i class="bi bi-pencil-square"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-12 shadow p-3 mt-3">
+                        <div class="table-respossive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Name</th>
+                                        <th>Addresse</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>1</th>
+                                        <td>Name 1</td>
+                                        <td>Addresse 1</td>
+                                        <td>
+                                            <a href="" class="text-danger"><i class="bi bi-trash"></i></a>
+                                            <a href="" class="text-dark"><i class="bi bi-pencil-square"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>2</th>
+                                        <td>Name 2</td>
+                                        <td>Addresse 2</td>
+                                        <td>
+                                            <a href="" class="text-danger"><i class="bi bi-trash"></i></a>
+                                            <a href="" class="text-dark"><i class="bi bi-pencil-square"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>3</th>
+                                        <td>Name 3</td>
+                                        <td>Addresse 3</td>
+                                        <td>
+                                            <a href="" class="text-danger"><i class="bi bi-trash"></i></a>
+                                            <a href="" class="text-dark"><i class="bi bi-pencil-square"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>
