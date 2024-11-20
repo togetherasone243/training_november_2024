@@ -1,10 +1,7 @@
 <?php
-require_once 'config/database.php';
-$database = new Database();
-$db = $database->getConnection();
-if ($db) {
-    echo "Database connection successful.";
+if ($_SERVER['REQUEST_URI'] == '/home') {
+    include 'views/home.php';
 } else {
-    echo "Database connection failed.";
+   include 'views/404.php';
 }
 ?>
