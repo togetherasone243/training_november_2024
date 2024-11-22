@@ -1,0 +1,77 @@
+
+.left-parametre {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 10px;
+    background-color: #17201bb4;
+}
+
+.main {
+    display: flex;
+    height: 100vh;
+}
+
+.left {
+    width: 250px;
+    background-color: #343a40;
+    color: rgb(247, 246, 246);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.settings-container {
+    margin-top: 50px;
+}
+
+.setting-item {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.setting-item i {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.setting-item span {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.setting-item:hover {
+    background-color: #495057;
+    border-radius: 5px;
+}
+
+.right {
+    flex-grow: 1;
+    background-color: white;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+    .left {
+        width: 200px;
+    }
+
+    .setting-item span {
+        font-size: 14px;
+    }
+
+    .right {
+        padding: 10px;
+    }
+}
+
+#AfficherLeft {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
