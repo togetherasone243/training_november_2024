@@ -29,7 +29,17 @@ class ServiceModel{
         return $datas;
     }
 
-    
+    public function delete_service($id){
+        $query = "DELETE FROM `service` WHERE id = ?";
+        $stmt = $this->con->prepare($query);
+        if ($stmt->execute([$id])){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+
 
 
 }

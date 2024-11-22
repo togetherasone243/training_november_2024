@@ -21,6 +21,15 @@ class ServiceController{
         $data_service = $this->ServiceModel->get_service();
         return $data_service;
     }
+
+    public function delete($id){
+        $delete_data = $this->ServiceModel->delete_service($id);
+        if ($delete_data){
+            header('Location:service?success');
+        }else{
+            header('Location:service?error=1');
+        }
+    }
     
 }
 ?>

@@ -15,18 +15,30 @@ ob_start();
     <div class="container">
         <div class="row">
             <?php 
-                if (isset($_GET['success'])){
-                    ?>
-                        <div class="alert alert-info">Enregistrement effectué avec succès</div>
-
+                if (isset($_GET['success'])){?><div class="alert alert-info">L'opération réussie</div>
                     <?php 
                 }else{
                     if (isset($_GET['error']) && $_GET['error'] == 1){
                         ?>
-                        <div class="alert alert-info">Echec d'enregistrement</div>
+                        <div class="alert alert-danger">L'opération échouée</div>
 
                     <?php
                     }
+                }
+
+                if (isset($_GET['confirmer'])){
+                    session_start();
+                    $_SESSION['id'] = htmlspecialchars($_POST['id']);
+                    ?>
+                        <div class="alert alert-info">Voulez-vous vraiment supprimer?
+                            <form action="/Service_delete" method="POST">
+                                <input type="hidden" name="delete_id" value="<?= $_SESSION['id']?>">
+                                <button type="sumbit" class="btn btn-primary btn-sm">OUI</button>
+                            </form>   
+                              <a href="/service" class="btn btn-danger btn-sm">NON</a>
+                         </div>
+
+                    <?php
                 }
             ?>
             <div class="col-lg-10">
@@ -65,8 +77,14 @@ ob_start();
                                     <td><?= $data->nom_service?></td>
                                     <td><?= $data->description?></td>
                                     <td>
-                                        <a href="" class="btn btn-primary">Modifier</a>
-                                        <a href="" class="btn btn-danger">Delete</a>
+                                        <form action="/service" method="POST">
+                                            <input type="hidden" value="<?= $data->id?>" name="id">
+                                            <button class="btn btn-primary" type="submit">Edit</button>
+                                        </form>
+                                        <form action="/service?confirmer" method="POST">
+                                        <input type="hidden" value="<?= $data->id?>" name="id">
+                                            <button class="btn btn-danger" type="submit">Delete</button>
+                                        </form>
                                     </td>
                                 </tr>
                                <?php
