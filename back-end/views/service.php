@@ -42,7 +42,32 @@ ob_start();
                 }
             ?>
             <div class="col-lg-10">
-                <h1>Enregistrer le projet</h1>
+                <?php if (isset($_GET['edit'])) : 
+                    $id_edit = htmlspecialchars($_POST['id']);
+                    $valeurs = $service->get_service_by_id($id_edit);?>
+                    
+                <h1>Modifier le service</h1>
+                <?php 
+                    foreach ($valeurs as $values){?>
+                        <form action="/service_edit" method="post">
+                            <div class="group-nav mt-2">
+                                <input type="text" name="nom" class="form-control" placeholder="Nom du service" value="<?= $values->nom_service?>">
+                            </div>
+
+                            <div class="group-nav mt-2">
+                                <textarea name="description" class="form-control" id="" placeholder="Description  du projet"><?= $values->description?></textarea>
+                            </div>
+                            <input type="hidden" name="id_edit" value="<?= $values->id?>">
+                            
+                            <button class="btn btn-primary" type="submit">Appliquer</button>
+                        </form>
+                        <?php 
+                    }
+                ?>
+                
+                <?php endif ?>
+                <?php if (! isset($_GET['edit'])) :?>
+                <h1>Enregistrer le service</h1>
                 <form action="/service_process" method="post">
                     <div class="group-nav mt-2">
                         <input type="text" name="nom" class="form-control" placeholder="Nom du service">
@@ -54,6 +79,7 @@ ob_start();
                     
                     <button class="btn btn-primary" name="save" type="submit">Ajouter</button>
                 </form>
+                <?php endif ?>
             </div>
 
             <div class="col-lg-12">
@@ -77,7 +103,7 @@ ob_start();
                                     <td><?= $data->nom_service?></td>
                                     <td><?= $data->description?></td>
                                     <td>
-                                        <form action="/service" method="POST">
+                                        <form action="/service?edit" method="POST">
                                             <input type="hidden" value="<?= $data->id?>" name="id">
                                             <button class="btn btn-primary" type="submit">Edit</button>
                                         </form>

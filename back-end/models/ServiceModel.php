@@ -39,6 +39,28 @@ class ServiceModel{
         }
     }
 
+    public function get_service_by_id($id){
+        $query = "SELECT * FROM `service` WHERE id = ?";
+        $stmt = $this->con->prepare($query);
+        $stmt->execute([$id]);
+
+        $datas = [];
+        while ($data = $stmt->fetch(PDO::FETCH_OBJ)){
+            $datas[] = $data;
+        }
+        return $datas;
+    }
+
+    public function update_service($nom_service, $description, $id){
+        $query = "UPDATE `service` SET nom_service = ?, `description` = ? WHERE id = ?";
+        $stmt = $this->con->prepare($query);
+        if ($stmt->execute([$nom_service, $description, $id])){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
 
 
 

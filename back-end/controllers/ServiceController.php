@@ -30,6 +30,20 @@ class ServiceController{
             header('Location:service?error=1');
         }
     }
+
+    public function get_service($id){
+        $select_service_by_id = $this->ServiceModel->get_service_by_id($id);
+        return $select_service_by_id;
+    }
+
+    public function update($nom_service, $description, $id){
+        $update_service = $this->ServiceModel->update_service($nom_service, $description, $id);
+        if ($update_service){
+            header('Location:service?success');
+        }else{
+            header('Location:service?error=1');
+        }
+    }
     
 }
 ?>
