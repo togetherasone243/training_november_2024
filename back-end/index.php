@@ -1,16 +1,18 @@
 <?php
 require_once 'config/database-example.php';
 require_once 'controllers/ServiceController.php';
+require_once 'controllers/DemandeServiceController.php';
 // Traitement du formulaire de login
 $database = new Connexion();
 $con = $database->getConnexion();
 
 $ServiceController = new ServiceController($con);
+$DemandeService = new DemandeServiceController($con);
 
 
 $request = trim($_SERVER['REQUEST_URI'], '/'); // Nettoyage de l'URL
 $routes = [
-    '' => 'views/service.php',           // Route principale (page de login)
+    '' => 'views/dashboard.php',         // Route principale (page de login)
     'login' => 'views/login.php',      // Page de login
     'dashboard' => 'views/dashboard.php', // Tableau de bord après connexion
     'logout' => 'controllers/logout.php', // Déconnexion
@@ -19,7 +21,10 @@ $routes = [
     'service' => 'views/service.php',
     'service?success' => 'views/service.php',
     'service?confirmer' => 'views/service.php',
-    'service?edit' => 'views/service.php'
+    'service?edit' => 'views/service.php',
+    'damndeService' => 'views/demande_service.php',
+    'demandeService?success' => 'views/demande_service.php',
+    'demandeService?error=1' => 'views/demande_service.php'
 ];
 
 // Gestion des routes
@@ -41,6 +46,11 @@ if (array_key_exists($request, $routes)) {
     $nom_service = $_POST['nom'] ?? '';
     $description = $_POST['description'] ?? '';
     $ServiceController->update($nom_service, $description, $id);
+}else if ($request === 'demandeService_process' && $_SERVER['REQUEST_METHOD'] === 'POST'){
+    $service = $_POST['service'] ?? '';
+    $client = $_POST['client'] ?? '';
+    $DemandeService->demandeservice($client, $service);
+
 }
  else {
     // Si la route n'existe pas, afficher la page 404

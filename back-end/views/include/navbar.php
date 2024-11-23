@@ -5,7 +5,7 @@
     <a 
     
     class="rounded  navItems a"
-        href="index.php">
+        href="/dashboard">
         <i class="bi bi-house"> </i>
     Accueille
     </a><br>
@@ -13,9 +13,9 @@
         <i class="bi bi-puzzle"></i>
     Services
     </a><br>
-    <a  class="rounded active  a" href="tache.php">
+    <a  class="rounded active  a" href="/damndeService">
         <i class="bi bi-puzzle"></i>
-    Mes tâches
+    Demande service
     </a><br>
     <a  class="rounded active  a" href="projet.php">
         <i class="bi bi-puzzle"></i>
