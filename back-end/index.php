@@ -18,7 +18,8 @@ $routes = [
     'login?logout=1' => 'views/login.php', // Page de login après déconnexion
     'service' => 'views/service.php',
     'service?success' => 'views/service.php',
-    'service?confirmer' => 'views/service.php'
+    'service?confirmer' => 'views/service.php',
+    'service?edit' => 'views/service.php'
 ];
 
 // Gestion des routes
@@ -32,6 +33,14 @@ if (array_key_exists($request, $routes)) {
 }else if ($request === 'Service_delete' && $_SERVER['REQUEST_METHOD'] === 'POST'){
     $id = $_POST['delete_id'] ?? '';
     $ServiceController->delete($id);
+}else if ($request === 'service?edit' && $_SERVER['REQUEST_METHOD'] === 'POST'){
+    $id_edit = $_POST['id'] ?? '';
+    $ServiceController->get_service($id_edit);
+}else if ($request === 'service_edit' && $_SERVER['REQUEST_METHOD'] === 'POST'){
+    $id = $_POST['id_edit'] ?? '';
+    $nom_service = $_POST['nom'] ?? '';
+    $description = $_POST['description'] ?? '';
+    $ServiceController->update($nom_service, $description, $id);
 }
  else {
     // Si la route n'existe pas, afficher la page 404
